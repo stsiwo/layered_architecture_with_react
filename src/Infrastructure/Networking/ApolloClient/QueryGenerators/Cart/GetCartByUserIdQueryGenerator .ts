@@ -1,4 +1,4 @@
-import { gql } from "apollo-boost";
+import { gql, DocumentNode } from "apollo-boost";
 import { injectable } from "inversify";
 import "reflect-metadata"; // only include once, so put entry class in src directory
 import { IQueryGenerator } from "../IQueryGenerator";
@@ -6,7 +6,7 @@ import { IQueryGenerator } from "../IQueryGenerator";
 @injectable()
 export class GetCartByUserIdQueryGenerator implements IQueryGenerator {
 
-    generate<DataType>(): DataType {
+    generate<DataType>(): DocumentNode {
 
         return (
             gql`

@@ -6,5 +6,5 @@ export interface IQueryGenerator {
     /**
      * 
      */
-    generate<DataType>(): DataType; 
+    generate<DataType>(): DocumentNode; 
 }

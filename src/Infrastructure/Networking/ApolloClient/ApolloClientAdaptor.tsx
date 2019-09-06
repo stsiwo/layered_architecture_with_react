@@ -28,11 +28,11 @@ export class ApolloClientAdaptor implements INetwork {
         this._queryGeneratorFactory = queryGeneratorFactory;
     }
 
-    public async requestQuery<DataType extends DocumentNode, VariablesType extends DefaultVariableType>(input: VariablesType, queryType: QueryTypeConstants): Promise<DataType | undefined> {
+    public async requestQuery<DataType, VariablesType extends DefaultVariableType>(input: VariablesType, queryType: QueryTypeConstants): Promise<DataType | undefined> {
 
         const queryGenerator: IQueryGenerator = this._queryGeneratorFactory(queryType);
 
-        const queryData: DataType = queryGenerator.generate<DataType>(); 
+        const queryData: DocumentNode = queryGenerator.generate<DataType>(); 
 
         const { loading, errors, data } = await this._client.query<DataType, VariablesType>({
             query: queryData,

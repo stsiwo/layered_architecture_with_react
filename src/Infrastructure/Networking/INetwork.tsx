@@ -7,6 +7,6 @@ export interface INetwork {
   /**
    * request a query to server 
    **/
-  requestQuery<DataType extends DocumentNode, VariablesType extends DefaultVariableType>(input: DataType, typeQuery: QueryTypeConstants): Promise<DataType | undefined>;
+  requestQuery<DataType, VariablesType extends DefaultVariableType>(input: VariablesType, typeQuery: QueryTypeConstants): Promise<DataType | undefined>;
 
 }
