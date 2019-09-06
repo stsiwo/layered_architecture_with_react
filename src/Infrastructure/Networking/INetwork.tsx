@@ -1,12 +1,22 @@
 import { DocumentNode } from 'graphql';
-import { QueryTypeConstants } from '../Queries/Base/QueryTypeConstants';
 import { DefaultVariableType } from './ApolloClient/Base/DefaultVariablesType';
+import { QueryTypeConstants } from '../Base/QueryTypeConstants';
 
 export interface INetwork {
   
   /**
-   * request a query to server 
+   * request for query 
    **/
-  requestQuery<DataType, VariablesType extends DefaultVariableType>(input: VariablesType, typeQuery: QueryTypeConstants): Promise<DataType | undefined>;
+  requestQuery<DataType, VariablesType extends DefaultVariableType>(input: VariablesType, queryType: QueryTypeConstants): Promise<DataType | undefined>;
+
+  /**
+   * request for create 
+   **/
+  requestCreate<DataType, VariablesType extends DefaultVariableType>(input: VariablesType, queryType: QueryTypeConstants): Promise<DataType | undefined>;
+
+  /**
+   * request for create 
+   **/
+  requestUpdate<DataType, VariablesType extends DefaultVariableType>(input: VariablesType, queryType: QueryTypeConstants): Promise<DataType | undefined>;
 
 }

@@ -4,12 +4,12 @@ import "reflect-metadata";
 import { INetwork } from "../INetwork";
 import ApolloClient from 'apollo-boost';
 import { StateType } from "../Base/State";
-import { QueryTypeConstants } from "../../Queries/Base/QueryTypeConstants";
 import { IQueryGenerator } from "./QueryGenerators/IQueryGenerator";
 import { TYPES } from "../../../di/types";
 import { ApolloClientConfig } from "./ApolloClientConfig";
 import { QueryObjectType } from "./Base/QueryObjectType";
 import { DefaultVariableType } from "./Base/DefaultVariablesType";
+import { QueryTypeConstants } from "../../Base/QueryTypeConstants";
 
 
 @injectable()
@@ -42,6 +42,48 @@ export class ApolloClientAdaptor implements INetwork {
         if (errors) {
             // undefined indicate some errors during request. is it bad??
             console.log("networking error during query request: ");
+            console.log(errors);
+            return undefined;
+        }
+
+        return data;
+    }
+
+    public async requestCreate<DataType, VariablesType extends DefaultVariableType>(input: VariablesType, queryType: QueryTypeConstants): Promise<DataType> {
+        
+        const queryGenerator: IQueryGenerator = this._queryGeneratorFactory(queryType);
+
+        const queryData: DocumentNode = queryGenerator.generate<DataType>(); 
+
+        const { errors, data } = await this._client.mutate<DataType, VariablesType>({
+            mutation: queryData,
+            variables: input, 
+        }); 
+
+        if (errors) {
+            // undefined indicate some errors during request. is it bad??
+            console.log("networking error during create request: ");
+            console.log(errors);
+            return undefined;
+        }
+
+        return data;
+    }
+
+    public async requestUpdate<DataType, VariablesType extends DefaultVariableType>(input: VariablesType, queryType: QueryTypeConstants): Promise<DataType> {
+
+        const queryGenerator: IQueryGenerator = this._queryGeneratorFactory(queryType);
+
+        const queryData: DocumentNode = queryGenerator.generate<DataType>(); 
+
+        const { errors, data } = await this._client.mutate<DataType, VariablesType>({
+            mutation: queryData,
+            variables: input, 
+        }); 
+
+        if (errors) {
+            // undefined indicate some errors during request. is it bad??
+            console.log("networking error during update request: ");
             console.log(errors);
             return undefined;
         }

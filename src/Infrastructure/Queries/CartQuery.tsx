@@ -6,10 +6,11 @@ import { GetCartByIdVariablesType } from "../../Application/Queries/Cart/GetCart
 import { GetCartByIdDataType } from "../../Application/Queries/Cart/GetCartById/GetCartByIdDataType";
 import { GetCartByUserIdVariablesType } from "../../Application/Queries/Cart/GetCartByUserId/GetCartByUserIdVariablesType";
 import { GetCartByUserIdDataType } from "../../Application/Queries/Cart/GetCartByUserId/GetCartByUserIdDataType";
-import { QueryTypeConstants } from "./Base/QueryTypeConstants";
+import { QueryTypeConstants } from "../Base/QueryTypeConstants";
 
 @injectable()
 export class CartQuery implements ICartQuery {
+
     private _network: INetwork;
 
     public constructor(
