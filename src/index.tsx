@@ -5,6 +5,7 @@ import { CssGlobalContext } from './UI/Base/Context/CssGlobalContext/CssGlobalCo
 import { CssGlobalContextDefaultState } from './UI/Base/Context/CssGlobalContext/CssGlobalContextDefaultState';
 import { Content } from './UI/Content/Content';
 import { Footer } from './UI/Footer/Footer';
+import { useResponsiveComponent } from './UI/Base/Hooks/ResponsiveComponentHook';
 
 /**
  * typescript: version 3.6 cuases below errors because it remove GlobalFetch in this version
@@ -23,20 +24,87 @@ import { Footer } from './UI/Footer/Footer';
  *
  **/
 
-const App = (props: any) => {
+//const App = (props: any) => {
+//    return (
+//        <div>
+//            <CssGlobalContext.Provider value={CssGlobalContextDefaultState}>
+//                <Header />
+//                <Content />
+//                <Footer />
+//            </CssGlobalContext.Provider>
+//        </div>
+//    );
+//};
+
+const getJsx = () => {
     return (
         <div>
-            <CssGlobalContext.Provider value={CssGlobalContextDefaultState}>
-                <Header />
-                <Content />
-                <Footer />
-            </CssGlobalContext.Provider>
+            <div>child1</div>
         </div>
     );
-};
+}
+
+const Child1 = (props: any) => {
+    return getJsx();
+}
+
+const Child2 = (props: any) => {
+    const currentScreenWidth = useResponsiveComponent(); 
+
+    if (currentScreenWidth > 700) {
+        return (
+            <div>
+                <div>larger than 700px</div>
+            </div>
+        );
+    } else {
+        return (
+            <div>
+                <div>smaller than 700px</div>
+            </div>
+        );
+    }
+}
+
+const Child3 = (props: any) => {
+
+    const currentScreenWidth = useResponsiveComponent(); 
+
+    if (currentScreenWidth > 700) {
+        return (
+            <div>
+                <div>larger than 700px</div>
+            </div>
+        );
+    } else {
+        return (
+            <div>
+                <div>smaller than 700px</div>
+            </div>
+        );
+    }
+}
+
+const Root = (props: any) => {
+    return (
+        <div>
+            <Child1 />
+            <Child2 />
+            <Child3 />
+        </div>
+        );
+}
+
+const Test = (props: any) => {
+    return (
+        <div>
+            <Root />
+        </div>
+    );
+}
 
 
 ReactDOM.render(
-  <App/>
+  <Test/>
   ,document.getElementById('root')
 )

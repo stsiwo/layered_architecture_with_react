@@ -2,18 +2,21 @@ import * as React from "react";
 import { useCss } from "react-use";
 import { useCssGlobalContext } from "../Base/Context/CssGlobalContext/CssGlobalContext";
 
-export const Footer: React.FunctionComponent<{}> = (props: {}) => {
+export const SearchBox: React.FunctionComponent<{}> = (props: {}) => {
 
     const cssGlobal = useCssGlobalContext();
 
     const className = useCss({
-        backgroundColor: "#a6ffb3",
-        height: "100px",
+
+        backgroundColor: "#e3a6ff",
+        height: "30px",
+        width: "500px",
+
     });
 
     return (
-        <footer className={className}>
-            <div>footer</div>    
-        </footer>
+        <div className={className}>
+            <div>search box</div>                
+        </div>
     );
 } 
