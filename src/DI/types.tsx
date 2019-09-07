@@ -3,6 +3,10 @@ export const TYPES = {
     IQueryGenerator: Symbol.for("IQueryGenerator"),
     FactoryOfIQueryGenerator: Symbol.for("Factory<IQueryGenerator>"),
     ApolloClientConfig: Symbol.for("ApolloClientConfig"),
-    IMapper: Symbol.for("IMapper")
+    IMapper: Symbol.for("IMapper"),
+    ICartRepository: Symbol.for("IRepository<Cart>"),
+    IProductRepository: Symbol.for("IRepository<Product>"),
+    IOrderRepository: Symbol.for("IRepository<Order>"),
+    IUserRepository: Symbol.for("IRepository<User>"),
 }
 
