@@ -58,6 +58,7 @@ export class CartAppService implements ICartAppService {
     }
 
     public async removeProductFromCart(input: AddProductsToCartInputType): Promise<object> {
+        return null;
     }
 
 

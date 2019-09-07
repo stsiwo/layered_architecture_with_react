@@ -1,12 +1,7 @@
-import { injectable, inject, interfaces } from "inversify";
-import { DocumentNode } from 'graphql';
+import { injectable } from "inversify";
 import "reflect-metadata";
-import { INetwork } from "../INetwork";
 import ApolloClient from 'apollo-boost';
 import { StateType } from "../Base/State";
-import { QueryTypeConstants } from "../../Queries/Base/QueryTypeConstants";
-import { IQueryGenerator } from "./QueryGenerators/IQueryGenerator";
-import { TYPES } from "../../../di/types";
 
 @injectable()
 export class ApolloClientConfig {

@@ -6,7 +6,9 @@ import { IDomainEventEmitter } from "../../Application/DomainEvents/IDomainEvent
 
 export const domainEventsConfigBindingModule = (myContainer: Container): Container => {
 
-    myContainer.bind<IDomainEventEmitter>(TYPES.IDomainEventEmitter).to(DomainEventEmitter);
+    // singleton?
+    // #DOUBT
+    myContainer.bind<IDomainEventEmitter>(TYPES.IDomainEventEmitter).to(DomainEventEmitter).inSingletonScope();
 
     // each event handler binding
     addedProductsToCartDomainEventHandlerBindingModule(myContainer);

@@ -1,6 +1,6 @@
 import { injectable } from "inversify";
 import { IMapper } from "./IMapper";
-import { Product } from "../../../Domain/ProductAgg";
+import { Product } from "../../../Domain/ProductsAgg";
 
 @injectable()
 export class ProductMapper implements IMapper<Product> {

@@ -31,7 +31,7 @@ export class CartRepository implements IRepository<Cart> {
 
         const input: CreateCartVariablesType = this._mapper.mapTo<CreateCartVariablesType>(aggregate);
 
-        const cart: Cart = await this._network.requestCreate<CreateCartDataType, CreateCartVariablesType>(input, QueryTypeConstants.CreateCart);
+        const cart: CreateCartDataType = await this._network.requestCreate<CreateCartDataType, CreateCartVariablesType>(input, QueryTypeConstants.CreateCart);
 
         return this._mapper.mapToAggregate(cart);
     }
@@ -40,7 +40,7 @@ export class CartRepository implements IRepository<Cart> {
 
         const input: UpdateCartVariablesType = this._mapper.mapTo<UpdateCartVariablesType>(aggregate);
 
-        const cart: Cart = await this._network.requestUpdate<UpdateCartDataType, UpdateCartVariablesType>(input, QueryTypeConstants.UpdateCart);
+        const cart: UpdateCartDataType = await this._network.requestUpdate<UpdateCartDataType, UpdateCartVariablesType>(input, QueryTypeConstants.UpdateCart);
 
         return this._mapper.mapToAggregate(cart);
     }
