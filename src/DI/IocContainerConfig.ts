@@ -2,6 +2,7 @@ import { Container } from "inversify";
 import { networkingBindingModule } from "./Networking/NetworkingBinding";
 import { queryGeneratorBindingModule } from "./Networking/QueryGeneratorsBinding";
 import { apolloClientConfigBindingModule } from "./Networking/ApolloClientConfigBinding";
+import { domainEventsConfigBindingModule } from "./DomainEvents/DomainEventsConfigBinding";
 
 const myContainer = new Container();
 
@@ -9,6 +10,9 @@ const myContainer = new Container();
 networkingBindingModule(myContainer);
 queryGeneratorBindingModule(myContainer);
 apolloClientConfigBindingModule(myContainer);
+
+// DomainEvents
+domainEventsConfigBindingModule(myContainer);
 
 
 export { myContainer };
