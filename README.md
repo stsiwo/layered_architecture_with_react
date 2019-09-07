@@ -11,4 +11,5 @@ clean architecture with react spa (prototype)
   - **App/UI State Update**: app/ui state update after use case suceeded if necessary
   - ~~**Domain Event**~~: use events (built-in package) and wrap it with class
   - **UI**: use react hook
+      - change rendering component based on the screen size
   - **GraphQL**: create sdl and implement and test
