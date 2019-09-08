@@ -13,4 +13,4 @@ clean architecture with react spa (prototype)
   - **UI**: use react hook
       - change rendering component based on the screen size
   - **GraphQL**: create sdl and implement and test
-  - **Code Splitting**: use "react-lodable". also check webpack code splitting. (Performance)
+  - **Code Splitting**: use "react-loadable". also check webpack code splitting. (Performance)
