@@ -4,11 +4,11 @@ import "reflect-metadata";
 import { injectable } from "inversify";
 
 @injectable()
-export class IsMenuRightSidebarMutationResolver implements IMutationLocalResolver {
+export class ToggleMenuRightSidebarMutationResolver implements IMutationLocalResolver {
 
     define(): ResolverType {
         return {
-            isMenuRightSidebarOpen: (rootValue, args, context, info): boolean => {
+            toggleMenuRightSidebar: (rootValue, args, context, info): boolean => {
                 // need to fix 
                 return false;
             } 

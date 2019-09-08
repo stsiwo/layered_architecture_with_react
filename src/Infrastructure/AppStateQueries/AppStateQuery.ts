@@ -15,7 +15,7 @@ export class AppStateQuery implements IAppStateQuery {
     }
 
     toggleMenuRightSidebar(): boolean {
-
+        this._network.requestUpdate()
     }
 
 }
