@@ -14,3 +14,4 @@ clean architecture with react spa (prototype)
       - change rendering component based on the screen size
   - **GraphQL**: create sdl and implement and test
   - **Code Splitting**: use "react-loadable". also check webpack code splitting. (Performance)
+      - reference: https://github.com/jamiebuilds/react-loadable
