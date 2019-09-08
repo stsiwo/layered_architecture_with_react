@@ -3,6 +3,8 @@ import { useCss } from "react-use";
 import { useCssGlobalContext } from "../Base/Context/CssGlobalContext/CssGlobalContext";
 import { SearchBox } from "./SearchBox";
 import { LogoIcon } from "./LogoIcon";
+import { MenuToggleIcon } from "./MenuToggleIcon";
+import { MenuRightSidebar } from "./MenuRightSidebar";
 
 export const Header: React.FunctionComponent<{}> = (props: {}) => {
 
@@ -16,9 +18,6 @@ export const Header: React.FunctionComponent<{}> = (props: {}) => {
         top: 0,
         width: "100%",
 
-        paddingLeft: "10px",
-        paddingRight: "10px",
-
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
@@ -29,6 +28,8 @@ export const Header: React.FunctionComponent<{}> = (props: {}) => {
         <header className={className}>
             <LogoIcon />
             <SearchBox />
+            <MenuToggleIcon />
+            <MenuRightSidebar />
         </header>
     );
 } 

@@ -3,10 +3,10 @@ export declare type CssGlobalContextDataType = {
     headerHeight: string;
 
     // media 
-    mobileSSize: string;
-    mobileLSize: string;
-    tabletSize: string;
-    laptopSize: string;
-    desktopSize: string;
+    mobileSSize: number;
+    mobileLSize: number;
+    tabletSize: number;
+    laptopSize: number;
+    desktopSize: number;
 
 }

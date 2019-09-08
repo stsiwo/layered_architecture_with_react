@@ -1,10 +1,13 @@
 import * as React from "react";
 import { useCss } from "react-use";
 import { useCssGlobalContext } from "../Base/Context/CssGlobalContext/CssGlobalContext";
+import { useResponsiveComponent } from "../Base/Hooks/ResponsiveComponentHook";
 
 export const SearchBox: React.FunctionComponent<{}> = (props: {}) => {
 
     const cssGlobal = useCssGlobalContext();
+
+    const currentScreenWidth = useResponsiveComponent();
 
     const className = useCss({
 
@@ -14,9 +17,13 @@ export const SearchBox: React.FunctionComponent<{}> = (props: {}) => {
 
     });
 
-    return (
-        <div className={className}>
-            <div>search box</div>                
-        </div>
-    );
+    if (currentScreenWidth >= cssGlobal.mobileLSize) {
+        return (
+            <div className={className}>
+                <div>search box</div>
+            </div>
+        );
+    } else {
+        return null;
+    }
 } 

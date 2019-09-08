@@ -5,10 +5,10 @@ export const CssGlobalContextDefaultState: CssGlobalContextDataType = {
     headerHeight: "50px",
 
     // media
-    mobileSSize: "320px",
-    mobileLSize: "425px",
-    tabletSize: "768px",
-    laptopSize: "1024px",
-    desktopSize: "1440px",
+    mobileSSize: 320,
+    mobileLSize: 425,
+    tabletSize: 768,
+    laptopSize: 1024,
+    desktopSize: 1440,
 
 }

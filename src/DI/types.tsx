@@ -18,5 +18,10 @@ export const TYPES = {
     // domain events
     IDomainEventEmitter: Symbol.for("IDomainEventEmitter"),
     DomainEventHandlers: Symbol.for("DomainEventHandlers"), // multi-inject
+
+    // local resolvers
+    IQueryLocalResolvers: Symbol.for("IQueryLocalResolvers"), // multi-inject
+    IMutationLocalResolvers: Symbol.for("IMutationLocalResolvers"), // multi-inject
+    ILocalResolverBuilder: Symbol.for("ILocalResolverBuilder"),
 }
 

@@ -24,87 +24,19 @@ import { useResponsiveComponent } from './UI/Base/Hooks/ResponsiveComponentHook'
  *
  **/
 
-//const App = (props: any) => {
-//    return (
-//        <div>
-//            <CssGlobalContext.Provider value={CssGlobalContextDefaultState}>
-//                <Header />
-//                <Content />
-//                <Footer />
-//            </CssGlobalContext.Provider>
-//        </div>
-//    );
-//};
-
-const getJsx = () => {
+const App = (props: any) => {
     return (
         <div>
-            <div>child1</div>
+            <CssGlobalContext.Provider value={CssGlobalContextDefaultState}>
+                <Header />
+                <Content />
+                <Footer />
+            </CssGlobalContext.Provider>
         </div>
     );
-}
-
-const Child1 = (props: any) => {
-    return getJsx();
-}
-
-const Child2 = (props: any) => {
-    const currentScreenWidth = useResponsiveComponent(); 
-
-    if (currentScreenWidth > 700) {
-        return (
-            <div>
-                <div>larger than 700px</div>
-            </div>
-        );
-    } else {
-        return (
-            <div>
-                <div>smaller than 700px</div>
-            </div>
-        );
-    }
-}
-
-const Child3 = (props: any) => {
-
-    const currentScreenWidth = useResponsiveComponent(); 
-
-    if (currentScreenWidth > 700) {
-        return (
-            <div>
-                <div>larger than 700px</div>
-            </div>
-        );
-    } else {
-        return (
-            <div>
-                <div>smaller than 700px</div>
-            </div>
-        );
-    }
-}
-
-const Root = (props: any) => {
-    return (
-        <div>
-            <Child1 />
-            <Child2 />
-            <Child3 />
-        </div>
-        );
-}
-
-const Test = (props: any) => {
-    return (
-        <div>
-            <Root />
-        </div>
-    );
-}
-
+};
 
 ReactDOM.render(
-  <Test/>
+  <App/>
   ,document.getElementById('root')
 )
