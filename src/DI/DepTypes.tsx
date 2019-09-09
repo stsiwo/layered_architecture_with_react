@@ -26,8 +26,19 @@ export const TYPES = {
 
     // service
     IAppStateService: Symbol.for("IAppStateService"),
+    ICartAppService: Symbol.for("ICartService"),
+    IOrderAppService: Symbol.for("IOrderService"),
+    IProductAppService: Symbol.for("IProductService"),
+    IUserAppService: Symbol.for("IUserService"),
 
     // app state query
     IAppStateQuery: Symbol.for("IAppStateQuery"),
+
+    // queries 
+    ICartQuery: Symbol.for("ICartQuery"),
+    IOrderQuery: Symbol.for("IOrderQuery"),
+    IProductQuery: Symbol.for("IProductQuery"),
+    IUserQuery: Symbol.for("IUserQuery"),
+    
 }
 

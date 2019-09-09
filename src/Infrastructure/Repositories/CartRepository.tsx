@@ -31,7 +31,10 @@ export class CartRepository implements IRepository<Cart> {
 
         const input: CreateCartVariablesType = this._mapper.mapTo<CreateCartVariablesType>(aggregate);
 
-        const cart: CreateCartDataType = await this._network.requestCreate<CreateCartDataType, CreateCartVariablesType>(input, QueryTypeConstants.CreateCart);
+        const cart: CreateCartDataType = await this._network.requestCreate<CreateCartDataType, CreateCartVariablesType>({
+            input: input
+            , queryType: QueryTypeConstants.CreateCart
+        });
 
         return this._mapper.mapToAggregate(cart);
     }
@@ -40,14 +43,20 @@ export class CartRepository implements IRepository<Cart> {
 
         const input: UpdateCartVariablesType = this._mapper.mapTo<UpdateCartVariablesType>(aggregate);
 
-        const cart: UpdateCartDataType = await this._network.requestUpdate<UpdateCartDataType, UpdateCartVariablesType>(input, QueryTypeConstants.UpdateCart);
+        const cart: UpdateCartDataType = await this._network.requestUpdate<UpdateCartDataType, UpdateCartVariablesType>({
+            input: input
+            , queryType: QueryTypeConstants.UpdateCart
+        });
 
         return this._mapper.mapToAggregate(cart);
     }
 
     public async find(input: GetCartByIdVariablesType): Promise<Cart> {
 
-        const cart : GetCartByIdDataType = await this._network.requestQuery<GetCartByIdDataType, GetCartByIdVariablesType>(input, QueryTypeConstants.GetCartById);
+        const cart: GetCartByIdDataType = await this._network.requestQuery<GetCartByIdDataType, GetCartByIdVariablesType>({
+            input: input
+            , queryType: QueryTypeConstants.GetCartById
+        });
 
         return this._mapper.mapToAggregate(cart);
         
