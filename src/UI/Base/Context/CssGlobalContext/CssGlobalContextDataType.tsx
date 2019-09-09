@@ -9,4 +9,9 @@ export declare type CssGlobalContextDataType = {
     laptopSize: number;
     desktopSize: number;
 
+    // font-size
+    titleFontSize: string;
+    subTitleFontSize: string;
+    regularFontSize: string;
+
 }

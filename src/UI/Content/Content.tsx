@@ -1,10 +1,10 @@
 import * as React from "react";
 import { useCss } from "react-use";
 import { useCssGlobalContext } from "../Base/Context/CssGlobalContext/CssGlobalContext";
-import { LeftAside } from "./LeftAside";
-import { Section } from "./Section";
+import LeftAside from "./LeftAside";
+import Section from "./Section";
 
-export const Content: React.FunctionComponent<{}> = (props: {}) => {
+const Content: React.FunctionComponent<{}> = (props: {}) => {
 
     const cssGlobal = useCssGlobalContext();
 
@@ -29,3 +29,5 @@ export const Content: React.FunctionComponent<{}> = (props: {}) => {
         </div>
     );
 } 
+
+export default Content;

@@ -11,4 +11,9 @@ export const CssGlobalContextDefaultState: CssGlobalContextDataType = {
     laptopSize: 1024,
     desktopSize: 1440,
 
+    // font-size
+    titleFontSize: "2em",
+    subTitleFontSize: "1.3em",
+    regularFontSize: "1em",
+
 }

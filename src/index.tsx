@@ -1,13 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Header } from './UI/Header/Header';
 import { CssGlobalContext } from './UI/Base/Context/CssGlobalContext/CssGlobalContext';
 import { CssGlobalContextDefaultState } from './UI/Base/Context/CssGlobalContext/CssGlobalContextDefaultState';
-import { Content } from './UI/Content/Content';
-import { Footer } from './UI/Footer/Footer';
-import { myContainer } from './DI/IocContainerConfig';
-import { ApolloClientConfig } from './Infrastructure/Networking/ApolloClient/ApolloClientConfig';
-import { TYPES } from './DI/DepTypes';
+import Header from './UI/Header/Header';
+import Content from './UI/Content/Content';
+import Footer from './UI/Footer/Footer';
 
 /**
  * typescript: version 3.6 cuases below errors because it remove GlobalFetch in this version

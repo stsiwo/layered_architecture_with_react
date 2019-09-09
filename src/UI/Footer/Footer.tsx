@@ -2,7 +2,7 @@ import * as React from "react";
 import { useCss } from "react-use";
 import { useCssGlobalContext } from "../Base/Context/CssGlobalContext/CssGlobalContext";
 
-export const Footer: React.FunctionComponent<{}> = (props: {}) => {
+const Footer: React.FunctionComponent<{}> = (props: {}) => {
 
     const cssGlobal = useCssGlobalContext();
 
@@ -17,3 +17,5 @@ export const Footer: React.FunctionComponent<{}> = (props: {}) => {
         </footer>
     );
 } 
+
+export default Footer;

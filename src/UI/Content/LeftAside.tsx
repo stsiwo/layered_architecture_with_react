@@ -2,7 +2,7 @@ import * as React from "react";
 import { useCss } from "react-use";
 import { useCssGlobalContext } from "../Base/Context/CssGlobalContext/CssGlobalContext";
 
-export const LeftAside: React.FunctionComponent<{}> = (props: {}) => {
+const LeftAside: React.FunctionComponent<{}> = (props: {}) => {
 
     const cssGlobal = useCssGlobalContext();
 
@@ -33,3 +33,5 @@ export const LeftAside: React.FunctionComponent<{}> = (props: {}) => {
         </aside>
     );
 } 
+
+export default LeftAside;

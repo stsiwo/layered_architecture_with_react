@@ -1,21 +1,16 @@
 import * as React from "react";
 import { useCss } from "react-use";
-import { useCssGlobalContext } from "../Base/Context/CssGlobalContext/CssGlobalContext";
-import { useResponsiveComponent } from "../Base/Hooks/ResponsiveComponentHook";
+import { useCssGlobalContext } from "../../Base/Context/CssGlobalContext/CssGlobalContext";
+import { useResponsiveComponent } from "../../Base/Hooks/ResponsiveComponentHook";
+import { useSearchBoxCss } from "./SearchBoxCss";
 
-export const SearchBox: React.FunctionComponent<{}> = (props: {}) => {
+const SearchBox: React.FunctionComponent<{}> = (props: {}) => {
 
     const cssGlobal = useCssGlobalContext();
 
     const currentScreenWidth = useResponsiveComponent();
 
-    const className = useCss({
-
-        backgroundColor: "#e3a6ff",
-        height: "30px",
-        width: "500px",
-
-    });
+    const className = useSearchBoxCss(); 
 
     if (currentScreenWidth >= cssGlobal.mobileLSize) {
         return (
@@ -27,3 +22,5 @@ export const SearchBox: React.FunctionComponent<{}> = (props: {}) => {
         return null;
     }
 } 
+
+export default SearchBox;

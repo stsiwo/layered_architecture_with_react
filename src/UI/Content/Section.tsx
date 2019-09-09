@@ -1,9 +1,8 @@
 import * as React from "react";
 import { useCss } from "react-use";
 import { useCssGlobalContext } from "../Base/Context/CssGlobalContext/CssGlobalContext";
-import { LeftAside } from "./LeftAside";
 
-export const Section: React.FunctionComponent<{}> = (props: {}) => {
+const Section: React.FunctionComponent<{}> = (props: {}) => {
 
     const cssGlobal = useCssGlobalContext();
 
@@ -22,3 +21,5 @@ export const Section: React.FunctionComponent<{}> = (props: {}) => {
         </section>
     );
 } 
+
+export default Section;

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useCss } from "react-use";
 
-export const Home: React.FunctionComponent<{}> = (props: {}) => {
+const Home: React.FunctionComponent<{}> = (props: {}) => {
 
     const className = useCss({
 
@@ -14,3 +14,5 @@ export const Home: React.FunctionComponent<{}> = (props: {}) => {
         </section>
     );
 } 
+
+export default Home;

@@ -1,35 +1,48 @@
 import * as React from "react";
 import { useCss } from "react-use";
+import { useHeaderCss } from "./HeaderCss";
 import { useCssGlobalContext } from "../Base/Context/CssGlobalContext/CssGlobalContext";
-import { SearchBox } from "./SearchBox";
-import { LogoIcon } from "./LogoIcon";
-import { MenuToggleIcon } from "./MenuToggleIcon";
-import { MenuRightSidebar } from "./MenuRightSidebar";
+import LogoIcon from "./LogoIcon/LogoIcon";
+import SearchBox from "./SearchBox/SearchBox";
+import MenuToggleIcon from "./MenuToggleIcon/MenuToggleIcon";
+import { useResponsiveComponent } from "../Base/Hooks/ResponsiveComponentHook";
+import MenuWrapper from "./MenuWrapper/MenuWrapper";
+import Menu from "./MenuWrapper/Menu/Menu";
 
-export const Header: React.FunctionComponent<{}> = (props: {}) => {
+const Header: React.FunctionComponent<{}> = (props: {}) => {
 
     const cssGlobal = useCssGlobalContext();
+    const currentScreenWidth = useResponsiveComponent();
 
-    const className = useCss({
+    const className = useHeaderCss({
+        cssGlobal: cssGlobal,
+        currentScreenWidth: currentScreenWidth
+    }); 
 
-        backgroundColor: "pink",
-        height: cssGlobal.headerHeight,
-        position: "fixed",
-        top: 0,
-        width: "100%",
 
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
+    const renderMenuSidebar = () => {
+        return (
+            <React.Fragment>
+                <MenuToggleIcon />
+                <MenuWrapper />
+            </React.Fragment>
+        );
+    }
 
-    });
+    const renderHorizontalMenu = () => {
+        return (
+            <Menu />
+        );
+    }
 
     return (
         <header className={className}>
             <LogoIcon />
             <SearchBox />
-            <MenuToggleIcon />
-            <MenuRightSidebar />
+            {(currentScreenWidth < cssGlobal.laptopSize && renderMenuSidebar() )}
+            {(currentScreenWidth >= cssGlobal.laptopSize && renderHorizontalMenu() )}
         </header>
     );
 } 
+
+export default Header;
