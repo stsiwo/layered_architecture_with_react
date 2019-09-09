@@ -5,7 +5,11 @@ import { CssGlobalContext } from './UI/Base/Context/CssGlobalContext/CssGlobalCo
 import { CssGlobalContextDefaultState } from './UI/Base/Context/CssGlobalContext/CssGlobalContextDefaultState';
 import { Content } from './UI/Content/Content';
 import { Footer } from './UI/Footer/Footer';
-import { useResponsiveComponent } from './UI/Base/Hooks/ResponsiveComponentHook';
+import { myContainer } from './DI/IocContainerConfig';
+import { ApolloClientConfig } from './Infrastructure/Networking/ApolloClient/ApolloClientConfig';
+import { TYPES } from './DI/DepTypes';
+import { ApolloClient, InMemoryCache, gql } from 'apollo-boost';
+import { HttpLink } from "apollo-link-http"
 
 /**
  * typescript: version 3.6 cuases below errors because it remove GlobalFetch in this version
@@ -23,6 +27,8 @@ import { useResponsiveComponent } from './UI/Base/Hooks/ResponsiveComponentHook'
  * see more detail: https://github.com/apollographql/apollo-link/issues/513#issuecomment-368234260
  *
  **/
+
+//const client = myContainer.get<ApolloClientConfig>(TYPES.ApolloClientConfig);
 
 const App = (props: any) => {
     return (

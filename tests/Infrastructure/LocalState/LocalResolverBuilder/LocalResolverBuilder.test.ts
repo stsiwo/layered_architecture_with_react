@@ -1,7 +1,7 @@
 import { Container } from "inversify";
 import { localResolverBuilderBindingModule } from "../../../../src/DI/LocalResolvers/LocalResolverBuilderBinding";
 import { ILocalResolverBuilder } from "../../../../src/Infrastructure/Networking/ApolloClient/LocalState/LocalResolvers/LocalResolverBuilder/ILocalResolverBuilder";
-import { TYPES } from "../../../../src/DI/types";
+import { TYPES } from "../../../../src/DI/DepTypes";
 
 test("lrb.1.1: builder should resolve Resolvers object", () => {
 

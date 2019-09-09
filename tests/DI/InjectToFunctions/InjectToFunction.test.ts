@@ -1,7 +1,7 @@
 import { ILocalResolverBuilder } from "../../../src/Infrastructure/Networking/ApolloClient/LocalState/LocalResolvers/LocalResolverBuilder/ILocalResolverBuilder";
 import { Resolvers } from "apollo-boost";
 import { bindDependencies } from "../../../src/DI/bindDependencies";
-import { TYPES } from "../../../src/DI/types";
+import { TYPES } from "../../../src/DI/DepTypes";
 import { useResolvedService } from "../../../src/UI/Base/Hooks/ResolvedServicve";
 
 function testFunc(localResolverBuilder: ILocalResolverBuilder): Resolvers {

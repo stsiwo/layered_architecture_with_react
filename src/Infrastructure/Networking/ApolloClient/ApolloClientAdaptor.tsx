@@ -5,7 +5,7 @@ import { INetwork } from "../INetwork";
 import ApolloClient from 'apollo-boost';
 import { StateType } from "../Base/State";
 import { IQueryGenerator } from "./QueryGenerators/IQueryGenerator";
-import { TYPES } from "../../../di/types";
+import { TYPES } from "../../../DI/DepTypes";
 import { ApolloClientConfig } from "./ApolloClientConfig";
 import { QueryObjectType } from "./Base/QueryObjectType";
 import { DefaultVariableType } from "./Base/DefaultVariablesType";

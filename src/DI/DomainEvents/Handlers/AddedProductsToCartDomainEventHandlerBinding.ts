@@ -1,7 +1,7 @@
 import { Container, interfaces } from "inversify";
 import { IDomainEventHandler } from "../../../Application/DomainEvents/Handlers/IDomainEventHandler";
 import { IDomainEvent } from "../../../Application/DomainEvents/Events/IDomainEvent";
-import { TYPES } from "../../types";
+import { TYPES } from "../../DepTypes";
 import { ShowProductsAddedNotificationWhenAddedProductsToCartDomainEventHandler } from "../../../Application/DomainEvents/Handlers/AddedProductsToCart/ShowProductsAddedNotificationWhenAddedProductsToCartDomainEventHandler";
 
 export const addedProductsToCartDomainEventHandlerBindingModule = (myContainer: Container): Container => {

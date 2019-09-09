@@ -3,7 +3,7 @@ import { IDomainEventHandler } from "./Handlers/IDomainEventHandler";
 import { IDomainEvent } from "./Events/IDomainEvent";
 import { injectable, inject, multiInject } from "inversify";
 import "reflect-metadata"; // only include once, so put entry class in src directory
-import { TYPES } from "../../DI/types";
+import { TYPES } from "../../DI/DepTypes";
 import { IDomainEventEmitter } from "./IDomainEventEmitter";
 
 @injectable()

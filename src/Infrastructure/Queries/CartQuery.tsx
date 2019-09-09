@@ -1,7 +1,7 @@
 import { inject, injectable } from "inversify";
 import { ICartQuery } from "../../Application/Queries/Cart/ICartQuery";
 import { INetwork } from "../Networking/INetwork";
-import { TYPES } from "../../DI/types";
+import { TYPES } from "../../DI/DepTypes";
 import { GetCartByIdVariablesType } from "../../Application/Queries/Cart/GetCartById/GetCartByIdVariablesType";
 import { GetCartByIdDataType } from "../../Application/Queries/Cart/GetCartById/GetCartByIdDataType";
 import { GetCartByUserIdVariablesType } from "../../Application/Queries/Cart/GetCartByUserId/GetCartByUserIdVariablesType";

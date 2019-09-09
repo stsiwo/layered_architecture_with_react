@@ -1,5 +1,5 @@
 import { Container, interfaces } from "inversify";
-import { TYPES } from "../types";
+import { TYPES } from "../DepTypes";
 import { ILocalResolverBuilder } from "../../Infrastructure/Networking/ApolloClient/LocalState/LocalResolvers/LocalResolverBuilder/ILocalResolverBuilder";
 import { LocalResolverBuilder } from "../../Infrastructure/Networking/ApolloClient/LocalState/LocalResolvers/LocalResolverBuilder/LocalResolverBuilder";
 import { isMenuRightSidebarQueryResolverBindingModule } from "./Queries/IsMenuRightSidebarQueryResolverBinding";

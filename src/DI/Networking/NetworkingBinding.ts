@@ -1,5 +1,5 @@
 import { Container } from "inversify";
-import { TYPES } from "../types";
+import { TYPES } from "../DepTypes";
 import { INetwork } from "../../Infrastructure/Networking/INetwork";
 import { ApolloClientAdaptor } from "../../Infrastructure/Networking/ApolloClient/ApolloClientAdaptor";
 

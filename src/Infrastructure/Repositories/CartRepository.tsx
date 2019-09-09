@@ -2,7 +2,7 @@ import { injectable, inject } from "inversify";
 import { IRepository } from "../../Application/Repositories/IRepository";
 import { Cart } from "../../Domain/CartAgg";
 import { INetwork } from "../Networking/INetwork";
-import { TYPES } from "../../DI/types";
+import { TYPES } from "../../DI/DepTypes";
 import { GetCartByIdDataType } from "../../Application/Queries/Cart/GetCartById/GetCartByIdDataType";
 import { GetCartByIdVariablesType } from "../../Application/Queries/Cart/GetCartById/GetCartByIdVariablesType";
 import { QueryTypeConstants } from "../Base/QueryTypeConstants";

@@ -1,7 +1,7 @@
 import { IAppStateQuery } from "./IAppStateQuery";
 import { INetwork } from "../Networking/INetwork";
 import { injectable, inject } from "inversify";
-import { TYPES } from "../../DI/types";
+import { TYPES } from "../../DI/DepTypes";
 
 @injectable()
 export class AppStateQuery implements IAppStateQuery {
@@ -15,7 +15,7 @@ export class AppStateQuery implements IAppStateQuery {
     }
 
     toggleMenuRightSidebar(): boolean {
-        this._network.requestUpdate()
+        return false;
     }
 
 }

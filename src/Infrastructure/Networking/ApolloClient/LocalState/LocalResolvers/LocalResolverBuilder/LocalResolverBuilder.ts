@@ -3,7 +3,7 @@ import { ILocalResolverBuilder } from "./ILocalResolverBuilder";
 import { IQueryLocalResolver } from "../IQueryLocalResolver";
 import { IMutationLocalResolver } from "../IMutationLocalResolver";
 import { inject, multiInject, injectable } from "inversify";
-import { TYPES } from "../../../../../../DI/types";
+import { TYPES } from "../../../../../../DI/DepTypes";
 import { ResolverType } from "../ResolverType";
 import "reflect-metadata";
 

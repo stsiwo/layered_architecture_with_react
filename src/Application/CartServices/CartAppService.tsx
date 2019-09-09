@@ -4,7 +4,7 @@ import { Cart } from "../../Domain/CartAgg";
 import { IRepository } from "../Repositories/IRepository";
 import { Product } from "../../Domain/ProductsAgg";
 import { injectable, inject } from "inversify";
-import { TYPES } from "../../DI/types";
+import { TYPES } from "../../DI/DepTypes";
 import { GetCartByIdVariablesType } from "../Queries/Cart/GetCartById/GetCartByIdVariablesType";
 import { AddProductsToCartOutputType } from "./AddProductsToCart/AddProductsToCartOutputType";
 

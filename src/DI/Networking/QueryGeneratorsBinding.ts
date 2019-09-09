@@ -1,5 +1,5 @@
 import { Container, interfaces } from "inversify";
-import { TYPES } from "../types";
+import { TYPES } from "../DepTypes";
 import { IQueryGenerator } from "../../Infrastructure/Networking/ApolloClient/QueryGenerators/IQueryGenerator";
 import { GetCartByUserIdQueryGenerator } from "../../Infrastructure/Networking/ApolloClient/QueryGenerators/Cart/GetCartByUserIdQueryGenerator ";
 import { GetCartByIdQueryGenerator } from "../../Infrastructure/Networking/ApolloClient/QueryGenerators/Cart/GetCartByIdQueryGenerator";

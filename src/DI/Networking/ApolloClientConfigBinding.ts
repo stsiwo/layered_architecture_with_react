@@ -1,5 +1,5 @@
 import { Container, interfaces } from "inversify";
-import { TYPES } from "../types";
+import { TYPES } from "../DepTypes";
 import { ApolloClientConfig } from "../../Infrastructure/Networking/ApolloClient/ApolloClientConfig";
 
 export const apolloClientConfigBindingModule = (myContainer: Container): Container => {

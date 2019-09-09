@@ -1,5 +1,5 @@
 import { Container, interfaces } from "inversify";
-import { TYPES } from "../types";
+import { TYPES } from "../DepTypes";
 import { DomainEventEmitter } from "../../Application/DomainEvents/DomainEventEmitter";
 import { addedProductsToCartDomainEventHandlerBindingModule } from "./Handlers/AddedProductsToCartDomainEventHandlerBinding";
 import { IDomainEventEmitter } from "../../Application/DomainEvents/IDomainEventEmitter";
