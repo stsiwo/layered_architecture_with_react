@@ -2,6 +2,9 @@ import { IAppStateQuery } from "./IAppStateQuery";
 import { INetwork } from "../Networking/INetwork";
 import { injectable, inject } from "inversify";
 import { TYPES } from "../../DI/DepTypes";
+import { ToggleMenuRightSidebarDataType } from "../../Application/AppStateServices/ToggleMenuRightSidebar/ToggleMenuRightSidebarDataType";
+import { ToggleMenuRightSidebarVariablesType } from "../../Application/AppStateServices/ToggleMenuRightSidebar/ToggleMenuRightSidebarVariablesType";
+import { QueryTypeConstants } from "../Base/QueryTypeConstants";
 
 @injectable()
 export class AppStateQuery implements IAppStateQuery {
@@ -14,8 +17,10 @@ export class AppStateQuery implements IAppStateQuery {
         this._network = network;
     }
 
-    toggleMenuRightSidebar(): boolean {
-        return false;
+    public async toggleMenuRightSidebar(): Promise<ToggleMenuRightSidebarDataType> {
+        return this._network.requestUpdate<ToggleMenuRightSidebarDataType, ToggleMenuRightSidebarVariablesType>({
+            queryType: QueryTypeConstants.ToggleMenuRightSidebar,
+        });
     }
 
 }

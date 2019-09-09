@@ -20,10 +20,16 @@ export class CartQuery implements ICartQuery {
     }
 
     public async getCartById(input: GetCartByIdVariablesType): Promise<GetCartByIdDataType | undefined> {
-        return await this._network.requestQuery<GetCartByIdDataType, GetCartByIdVariablesType>(input, QueryTypeConstants.GetCartById);
+        return await this._network.requestQuery<GetCartByIdDataType, GetCartByIdVariablesType>({
+            input: input,
+            queryType: QueryTypeConstants.GetCartById
+        });
     }
     public async getCartByUserId(input: GetCartByUserIdVariablesType): Promise<GetCartByUserIdDataType | undefined> {
-        return await this._network.requestQuery<GetCartByUserIdDataType, GetCartByUserIdVariablesType>(input, QueryTypeConstants.GetCartByUserId);
+        return await this._network.requestQuery<GetCartByUserIdDataType, GetCartByUserIdVariablesType>({
+            input: input,
+            queryType: QueryTypeConstants.GetCartByUserId
+        });
     }
 
 

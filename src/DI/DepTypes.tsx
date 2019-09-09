@@ -23,5 +23,11 @@ export const TYPES = {
     IQueryLocalResolvers: Symbol.for("IQueryLocalResolvers"), // multi-inject
     IMutationLocalResolvers: Symbol.for("IMutationLocalResolvers"), // multi-inject
     ILocalResolverBuilder: Symbol.for("ILocalResolverBuilder"),
+
+    // service
+    IAppStateService: Symbol.for("IAppStateService"),
+
+    // app state query
+    IAppStateQuery: Symbol.for("IAppStateQuery"),
 }
 

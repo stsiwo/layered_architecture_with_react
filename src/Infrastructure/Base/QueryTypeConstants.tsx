@@ -9,5 +9,8 @@ export enum QueryTypeConstants {
 
     // create (mutation)
     CreateCart,
-    CreateOrder
+    CreateOrder,
+
+    // app state
+    ToggleMenuRightSidebar,
 }

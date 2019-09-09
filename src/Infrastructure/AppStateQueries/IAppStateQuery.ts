@@ -1,4 +1,6 @@
+import { ToggleMenuRightSidebarDataType } from "../../Application/AppStateServices/ToggleMenuRightSidebar/ToggleMenuRightSidebarDataType";
+
 export interface IAppStateQuery {
 
-    toggleMenuRightSidebar(): boolean;
+    toggleMenuRightSidebar(): Promise<ToggleMenuRightSidebarDataType>;
 }

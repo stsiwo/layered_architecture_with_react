@@ -10,6 +10,7 @@ import { ApolloClientConfig } from "./ApolloClientConfig";
 import { QueryObjectType } from "./Base/QueryObjectType";
 import { DefaultVariableType } from "./Base/DefaultVariablesType";
 import { QueryTypeConstants } from "../../Base/QueryTypeConstants";
+import { RequestArgsType } from "./Base/RequestArgsType";
 
 
 @injectable()
@@ -28,15 +29,15 @@ export class ApolloClientAdaptor implements INetwork {
         this._queryGeneratorFactory = queryGeneratorFactory;
     }
 
-    public async requestQuery<DataType, VariablesType extends DefaultVariableType>(input: VariablesType, queryType: QueryTypeConstants): Promise<DataType | undefined> {
+    public async requestQuery<DataType, VariablesType extends DefaultVariableType>(requestArgs: RequestArgsType<VariablesType>): Promise<DataType | undefined> {
 
-        const queryGenerator: IQueryGenerator = this._queryGeneratorFactory(queryType);
+        const queryGenerator: IQueryGenerator = this._queryGeneratorFactory(requestArgs.queryType);
 
         const queryData: DocumentNode = queryGenerator.generate<DataType>(); 
 
         const { loading, errors, data } = await this._client.query<DataType, VariablesType>({
             query: queryData,
-            variables: input, 
+            variables: requestArgs.input, 
         }); 
 
         if (errors) {
@@ -49,15 +50,15 @@ export class ApolloClientAdaptor implements INetwork {
         return data;
     }
 
-    public async requestCreate<DataType, VariablesType extends DefaultVariableType>(input: VariablesType, queryType: QueryTypeConstants): Promise<DataType> {
+    public async requestCreate<DataType, VariablesType extends DefaultVariableType>(requestArgs: RequestArgsType<VariablesType>): Promise<DataType> {
         
-        const queryGenerator: IQueryGenerator = this._queryGeneratorFactory(queryType);
+        const queryGenerator: IQueryGenerator = this._queryGeneratorFactory(requestArgs.queryType);
 
         const queryData: DocumentNode = queryGenerator.generate<DataType>(); 
 
         const { errors, data } = await this._client.mutate<DataType, VariablesType>({
             mutation: queryData,
-            variables: input, 
+            variables: requestArgs.input, 
         }); 
 
         if (errors) {
@@ -70,15 +71,15 @@ export class ApolloClientAdaptor implements INetwork {
         return data;
     }
 
-    public async requestUpdate<DataType, VariablesType extends DefaultVariableType>(input: VariablesType, queryType: QueryTypeConstants): Promise<DataType> {
+    public async requestUpdate<DataType, VariablesType extends DefaultVariableType>(requestArgs: RequestArgsType<VariablesType>): Promise<DataType> {
 
-        const queryGenerator: IQueryGenerator = this._queryGeneratorFactory(queryType);
+        const queryGenerator: IQueryGenerator = this._queryGeneratorFactory(requestArgs.queryType);
 
         const queryData: DocumentNode = queryGenerator.generate<DataType>(); 
 
         const { errors, data } = await this._client.mutate<DataType, VariablesType>({
             mutation: queryData,
-            variables: input, 
+            variables: requestArgs.input, 
         }); 
 
         if (errors) {

@@ -8,8 +8,6 @@ import { Footer } from './UI/Footer/Footer';
 import { myContainer } from './DI/IocContainerConfig';
 import { ApolloClientConfig } from './Infrastructure/Networking/ApolloClient/ApolloClientConfig';
 import { TYPES } from './DI/DepTypes';
-import { ApolloClient, InMemoryCache, gql } from 'apollo-boost';
-import { HttpLink } from "apollo-link-http"
 
 /**
  * typescript: version 3.6 cuases below errors because it remove GlobalFetch in this version
