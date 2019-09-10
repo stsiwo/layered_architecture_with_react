@@ -5,6 +5,7 @@ import { useMenuRightSidebarState } from "../../../Base/Hooks/MenuRightSidebarSt
 import { useResponsiveComponent } from "../../../Base/Hooks/ResponsiveComponentHook";
 import { useMenuListCss } from "./MenuListCss";
 import { useMenuCss } from "./MenuCss";
+import { Link } from "react-router-dom";
 
 const Menu: React.FunctionComponent<{}> = (props: {}) => {
 
@@ -33,9 +34,9 @@ const Menu: React.FunctionComponent<{}> = (props: {}) => {
     return (
         <nav className={menuRightSidebarCss} onClick={handleStopPropagation}>
             <ul className={menuListItemCss}>
-                <li><a href="./">Order</a></li>
-                <li><a href="./">Cart</a></li>
-                <li><a href="./">Account</a></li>
+                <li><Link to="/order">Order</Link></li>
+                <li><Link to="/cart">Cart</Link></li>
+                <li><Link to="/account">Account</Link></li>
             </ul>
         </nav>
     );

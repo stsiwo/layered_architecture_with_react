@@ -1,18 +1,16 @@
 import * as React from "react";
 import { useCss } from "react-use";
 
-const Home: React.FunctionComponent<{}> = (props: {}) => {
+const Order: React.FunctionComponent<{}> = (props: {}) => {
 
     const className = useCss({
-
-
     });
 
     return (
         <section className={className}>
-            <p>section</p>    
+            <p>order</p>    
         </section>
     );
 } 
 
-export default Home;
+export default Order;

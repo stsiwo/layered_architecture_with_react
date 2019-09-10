@@ -5,6 +5,7 @@ import { CssGlobalContextDefaultState } from './UI/Base/Context/CssGlobalContext
 import Header from './UI/Header/Header';
 import Content from './UI/Content/Content';
 import Footer from './UI/Footer/Footer';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 /**
  * typescript: version 3.6 cuases below errors because it remove GlobalFetch in this version
@@ -29,9 +30,11 @@ const App = (props: any) => {
     return (
         <div>
             <CssGlobalContext.Provider value={CssGlobalContextDefaultState}>
-                <Header />
-                <Content />
-                <Footer />
+                <Router>
+                    <Header />
+                    <Content />
+                    <Footer />
+                </Router>
             </CssGlobalContext.Provider>
         </div>
     );

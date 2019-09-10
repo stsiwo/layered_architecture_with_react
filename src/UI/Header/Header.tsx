@@ -19,7 +19,6 @@ const Header: React.FunctionComponent<{}> = (props: {}) => {
         currentScreenWidth: currentScreenWidth
     }); 
 
-
     const renderMenuSidebar = () => {
         return (
             <React.Fragment>

@@ -1,8 +1,11 @@
 import * as React from "react";
 import { useCss } from "react-use";
 import { useCssGlobalContext } from "../Base/Context/CssGlobalContext/CssGlobalContext";
-import LeftAside from "./LeftAside";
-import Section from "./Section";
+import { Route } from 'react-router-dom';
+import CartDetail from "./Cart/CartDetail";
+import Account from "./Account/Account";
+import Order from "./Order/Order";
+import Home from "./Home/Home";
 
 const Content: React.FunctionComponent<{}> = (props: {}) => {
 
@@ -24,8 +27,10 @@ const Content: React.FunctionComponent<{}> = (props: {}) => {
 
     return (
         <div className={className}>
-            <LeftAside />
-            <Section />
+            <Route path="/" exact component={Home} />
+            <Route path="/cart" exact component={CartDetail} />
+            <Route path="/account" exact component={Account} />
+            <Route path="/order" exact component={Order} />
         </div>
     );
 } 

@@ -1,16 +1,16 @@
 import * as React from "react";
 import { useCss } from "react-use";
 
-const CartDetail: React.FunctionComponent<{}> = (props: {}) => {
+const Account: React.FunctionComponent<{}> = (props: {}) => {
 
     const className = useCss({
     });
 
     return (
         <section className={className}>
-            <p>cart detail</p>    
+            <p>account</p>    
         </section>
     );
 } 
 
-export default CartDetail;
+export default Account;
