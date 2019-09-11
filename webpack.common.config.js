@@ -18,10 +18,15 @@ module.exports = {
     })
   ],
   resolve: {
-    mainFiles: ['index'],
-    modules: ['node_modules'],
-    extensions: [".ts", ".tsx", ".js", ".json"]
+      mainFiles: ['index'],
+      modules: ['node_modules'],
+      extensions: [".ts", ".tsx", ".js", ".json"],
+      alias: {
+          Images: path.resolve(__dirname, 'src/Images/'),
+      }
   },
+  // webpack does not tell whether you installed listed loader until it is used. so be careful
+  // don't include "include" option if you are intended to include node modoule resource
   module: {
     rules: [
       {
@@ -38,25 +43,12 @@ module.exports = {
         }
       },
       { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
-      {
-        test: /\.css$/,
-        exclude: /node_modules/,
-        include: path.resolve(__dirname, 'src'),
-        use: [
           {
-            loader: 'style-loader',
+              test: /\.css$/,
+              use: ['style-loader', 'css-loader']
           },
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-            }
-          }
-        ]
-      },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        include: path.resolve(__dirname, 'src'),
         use: [
           {
             loader: 'file-loader',
@@ -68,7 +60,6 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        include: path.resolve(__dirname, 'src'),
         use: [
           'file-loader'
         ]
