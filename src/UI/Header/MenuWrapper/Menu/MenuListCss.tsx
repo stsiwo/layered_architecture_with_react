@@ -9,6 +9,7 @@ export const useMenuListCss = (args: { currentSidebarStatus: boolean, cssGlobal:
         marginBlockStart: "0px",
         marginBlockEnd: "0px",
         fontSize: args.cssGlobal.titleFontSize,
+        zIndex: "9000",
     }
 
     var cssObject = null;

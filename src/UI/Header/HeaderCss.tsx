@@ -11,6 +11,7 @@ export const useHeaderCss = (args: { currentSidebarStatus?: boolean, cssGlobal?:
         width: "100%",
         display: "flex",
         alignItems: "center",
+        zIndex: "7000",
     }
 
     var cssObject = null;

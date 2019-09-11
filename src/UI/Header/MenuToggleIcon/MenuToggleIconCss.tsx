@@ -10,7 +10,7 @@ export const useMenuToggleIconCss = (args: { currentSidebarStatus?: boolean, css
         margin: "10px",
         minWidth: "30px",
 
-        ...(args.currentSidebarStatus && { zIndex: 4 }),
+        ...(args.currentSidebarStatus && { zIndex: "9001" }),
     }
 
     var cssObject = null;

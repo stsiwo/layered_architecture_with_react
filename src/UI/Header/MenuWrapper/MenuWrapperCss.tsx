@@ -11,6 +11,7 @@ export const useMenuWrapperCss = (currentSidebarStatus: boolean) => {
         ...(currentSidebarStatus && { height: "100%" }),
         height: "100%",
         backgroundColor: "rgba(219, 117, 117, 0.5)",
+        zIndex: "8000",
     });
 };
 

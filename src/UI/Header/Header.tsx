@@ -16,7 +16,7 @@ const Header: React.FunctionComponent<{}> = (props: {}) => {
 
     const className = useHeaderCss({
         cssGlobal: cssGlobal,
-        currentScreenWidth: currentScreenWidth
+        currentScreenWidth: currentScreenWidth,
     }); 
 
     const renderMenuSidebar = () => {
