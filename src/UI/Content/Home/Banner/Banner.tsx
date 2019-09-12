@@ -1,6 +1,5 @@
 import * as React from "react";
-import "./BannerKeyFrames.css";
-import "./Banner.css";
+import "./Banner.scss";
 import { useBanner } from "./useBanner";
 import { useBannerType } from "./useBannerType";
 //const SampleImageSrc = require("../../../../Images/sample_image.jpg");

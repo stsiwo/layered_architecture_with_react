@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useCss } from "react-use";
 import Banner from "./Banner/Banner";
+import FeaturedProductList from "./FeaturedProductList/FeaturedProductList";
 
 const Home: React.FunctionComponent<{}> = (props: {}) => {
 
@@ -11,6 +12,7 @@ const Home: React.FunctionComponent<{}> = (props: {}) => {
     return (
         <section className={className}>
             <Banner />
+            <FeaturedProductList />
         </section>
     );
 } 
