@@ -1,0 +1,104 @@
+@import '../../../Base/Css/GlobalVariables';
+
+.brand-new-product-list-wapper {
+
+}
+
+.brand-new-product-list-wapper-title {
+    text-align: center;
+}
+
+.brand-new-product-list {
+    padding: 10px;
+    background-color: white;
+}
+
+.brand-new-product-list-cover {
+
+    @media only screen and (max-width: $mobileLSize - 1 + "px") {
+        white-space: nowrap;
+        overflow-y: hidden;
+        overflow-x: scroll;
+    }
+
+    @media only screen and (min-width: $mobileLSize + "px") {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+
+.brand-new-product-item {
+    width: 100px;
+    height: 150px;
+
+    @media only screen and (max-width: $mobileLSize - 1 + "px") {
+        display: inline-block;
+        border: 1px solid black;
+        box-sizing: border-box;
+        margin: 0 4px;
+    }
+
+    @media only screen and (min-width: $mobileLSize + "px") {
+        border: 1px solid black;
+        margin: 5px;
+    }
+}
+
+.brand-new-product-item-link {
+    text-decoration: none;
+    color: $mainColor;
+}
+
+.brand-new-product-item-image {
+
+    width: 100px;
+    height: 100px;
+
+    @media only screen and (max-width: $mobileLSize - 1 + "px") {
+
+    }
+
+    @media only screen and (min-width: $mobileLSize + "px") {
+    }
+}
+
+.brand-new-product-item-detail {
+    text-align: center;
+}
+
+.brand-new-product-item-detail-name {
+    margin: 4px;
+}
+
+.brand-new-product-item-detail-price {
+
+}
+
+.brand-new-product-list-btn-wrapper {
+    display: flex;
+    justify-content: space-around; 
+}
+
+.brand-new-product-list-left-btn {
+    all: unset;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border: solid springgreen;
+    border-width: 3px 0 0 3px;
+    transform: rotate(-45deg);
+    cursor: pointer;
+}
+
+.brand-new-product-list-right-btn {
+    all: unset;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border: solid springgreen;
+    border-width: 3px 0 0 3px;
+    transform: rotate(135deg);
+    cursor: pointer;
+}
