@@ -7,7 +7,7 @@ export declare type SampleProductListType = {
     productPrice: number,
 }
 
-export const SampleProductList: SampleProductListType[] = [
+export const sampleProductList: SampleProductListType[] = [
     {
         id: "1",
         image: SampleImageSrc,

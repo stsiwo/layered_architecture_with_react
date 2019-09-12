@@ -1,24 +1,13 @@
 import * as React from "react";
 import "./FeaturedProductList.scss";
-import { SampleProductListType, SampleProductList } from "./SampleProductList";
+import { SampleProductListType } from "./SampleProductList";
 import { Link } from "react-router-dom";
-import { useResolvedService } from "../../../Base/Hooks/ResolvedServicve";
-import { useResponsiveComponent } from "../../../Base/Hooks/ResponsiveComponentHook";
-import { useCssGlobalContext } from "../../../Base/Context/CssGlobalContext/CssGlobalContext";
+import { useFeaturedProductListType } from "./useFeaturedProductListType";
+import { useFeaturedProductList } from "./useFeaturedProductList";
 
 const FeaturedProductList: React.FunctionComponent<{}> = (props: {}) => {
 
-    const scrollContainerRef = React.createRef<HTMLDivElement>();
-    const currentScreenWidth = useResponsiveComponent();
-    const cssGlobal = useCssGlobalContext();
-
-    const navigateToLeft: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-        scrollContainerRef.current.scrollTo({ left: 0, behavior: "smooth" });
-    };
-
-    const navigateToRight: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-        scrollContainerRef.current.scrollTo({ left: scrollContainerRef.current.scrollWidth, behavior: "smooth" });
-    };
+    const featuredProductListHook: useFeaturedProductListType = useFeaturedProductList();
 
     const renderFeaturedProducts: (list: SampleProductListType[]) => React.ReactNode = (list) => {
         return list.map((product) => (
@@ -38,14 +27,14 @@ const FeaturedProductList: React.FunctionComponent<{}> = (props: {}) => {
         <section className="featured-product-list-wapper">
             <h2 className="featured-product-list-wapper-title">Featured Products</h2>
             <div className="featured-product-list">
-                <div className="featured-product-list-cover" ref={scrollContainerRef}>
-                    {renderFeaturedProducts(SampleProductList)} 
+                <div className="featured-product-list-cover" ref={featuredProductListHook.scrollContainerRef}>
+                    {renderFeaturedProducts(featuredProductListHook.sampleProductList)} 
                 </div>
             </div>
-            {(currentScreenWidth < cssGlobal.mobileLSize &&
+            {(featuredProductListHook.currentScreenWidth < featuredProductListHook.cssGlobal.mobileLSize &&
                 <div className="featured-product-list-btn-wrapper">
-                    <button className="featured-product-list-left-btn" onClick={navigateToLeft} />
-                    <button className="featured-product-list-right-btn" onClick={navigateToRight} />
+                    <button className="featured-product-list-left-btn" onClick={featuredProductListHook.navigateToLeft} />
+                    <button className="featured-product-list-right-btn" onClick={featuredProductListHook.navigateToRight} />
                 </div>
             )}
         </section>
