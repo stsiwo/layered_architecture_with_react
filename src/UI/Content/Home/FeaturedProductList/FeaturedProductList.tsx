@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./FeaturedProductList.scss";
-import { SampleProductListType } from "./SampleProductList";
+import { SampleFeaturedProductListType } from "./SampleFeaturedProductList";
 import { Link } from "react-router-dom";
 import { useFeaturedProductListType } from "./useFeaturedProductListType";
 import { useFeaturedProductList } from "./useFeaturedProductList";
@@ -9,7 +9,7 @@ const FeaturedProductList: React.FunctionComponent<{}> = (props: {}) => {
 
     const featuredProductListHook: useFeaturedProductListType = useFeaturedProductList();
 
-    const renderFeaturedProducts: (list: SampleProductListType[]) => React.ReactNode = (list) => {
+    const renderFeaturedProducts: (list: SampleFeaturedProductListType[]) => React.ReactNode = (list) => {
         return list.map((product) => (
             <article className="featured-product-item" key={product.id}>
                 <Link to={`/products/${product.id}`} className="featured-product-item-link">
@@ -28,7 +28,7 @@ const FeaturedProductList: React.FunctionComponent<{}> = (props: {}) => {
             <h2 className="featured-product-list-wapper-title">Featured Products</h2>
             <div className="featured-product-list">
                 <div className="featured-product-list-cover" ref={featuredProductListHook.scrollContainerRef}>
-                    {renderFeaturedProducts(featuredProductListHook.sampleProductList)} 
+                    {renderFeaturedProducts(featuredProductListHook.sampleFeaturedProductList)} 
                 </div>
             </div>
             {(featuredProductListHook.currentScreenWidth < featuredProductListHook.cssGlobal.mobileLSize &&

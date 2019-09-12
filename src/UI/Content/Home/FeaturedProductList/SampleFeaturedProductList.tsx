@@ -1,13 +1,13 @@
 const SampleImageSrc = require("../../../../Images/sample_image.jpg");
 
-export declare type SampleProductListType = {
+export declare type SampleFeaturedProductListType = {
     id: string,
     image: string,
     productName: string,
     productPrice: number,
 }
 
-export const sampleProductList: SampleProductListType[] = [
+export const sampleFeaturedProductList: SampleFeaturedProductListType[] = [
     {
         id: "1",
         image: SampleImageSrc,

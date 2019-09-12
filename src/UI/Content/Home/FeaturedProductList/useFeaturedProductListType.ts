@@ -1,6 +1,6 @@
 import { RefObject, MouseEventHandler, ReactNode } from "react";
 import { CssGlobalContextDataType } from "../../../Base/Context/CssGlobalContext/CssGlobalContextDataType";
-import { SampleProductListType } from "./SampleProductList";
+import { SampleFeaturedProductListType } from "./SampleFeaturedProductList";
 
 export declare type useFeaturedProductListType = {
     scrollContainerRef: RefObject<HTMLDivElement>,
@@ -8,5 +8,5 @@ export declare type useFeaturedProductListType = {
     cssGlobal: CssGlobalContextDataType,
     navigateToLeft: MouseEventHandler<HTMLButtonElement>,
     navigateToRight: MouseEventHandler<HTMLButtonElement>,
-    sampleProductList: SampleProductListType[],
+    sampleFeaturedProductList: SampleFeaturedProductListType[],
 }

@@ -2,7 +2,7 @@ import { useState, createRef, ReactNode, MouseEventHandler } from "react";
 import { useFeaturedProductListType } from "./useFeaturedProductListType";
 import { useResponsiveComponent } from "../../../Base/Hooks/ResponsiveComponentHook";
 import { useCssGlobalContext } from "../../../Base/Context/CssGlobalContext/CssGlobalContext";
-import { sampleProductList } from "./SampleProductList";
+import { sampleFeaturedProductList } from "./SampleFeaturedProductList";
 
 export const useFeaturedProductList: () => useFeaturedProductListType = () => {
 
@@ -24,6 +24,6 @@ export const useFeaturedProductList: () => useFeaturedProductListType = () => {
         cssGlobal: cssGlobal,
         navigateToLeft: navigateToLeft,
         navigateToRight: navigateToRight,
-        sampleProductList: sampleProductList,
+        sampleFeaturedProductList: sampleFeaturedProductList,
     }
 }
