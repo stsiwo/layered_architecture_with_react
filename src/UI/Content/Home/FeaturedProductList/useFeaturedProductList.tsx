@@ -1,14 +1,15 @@
-import { useState, createRef, ReactNode, MouseEventHandler } from "react";
+import { useState, createRef, ReactNode, MouseEventHandler, useEffect } from "react";
 import { useFeaturedProductListType } from "./useFeaturedProductListType";
 import { useResponsiveComponent } from "../../../Base/Hooks/ResponsiveComponentHook";
 import { useCssGlobalContext } from "../../../Base/Context/CssGlobalContext/CssGlobalContext";
-import { sampleFeaturedProductList } from "./SampleFeaturedProductList";
+import { getFeaturedProductListTestData } from "../../../../../tests/UI/Content/Home/FeaturedProductList/FeaturedProductListTestData";
 
 export const useFeaturedProductList: () => useFeaturedProductListType = () => {
 
     const scrollContainerRef = createRef<HTMLDivElement>();
     const currentScreenWidth = useResponsiveComponent();
     const cssGlobal = useCssGlobalContext();
+    //const currentFeaturedProductList: GetFeaturedProductListOutputType[] = useFeaturedProductListApiFetch();
 
     const navigateToLeft: MouseEventHandler<HTMLButtonElement> = (e) => {
         scrollContainerRef.current.scrollTo({ left: 0, behavior: "smooth" });
@@ -24,6 +25,7 @@ export const useFeaturedProductList: () => useFeaturedProductListType = () => {
         cssGlobal: cssGlobal,
         navigateToLeft: navigateToLeft,
         navigateToRight: navigateToRight,
-        sampleFeaturedProductList: sampleFeaturedProductList,
+        //featuredProductList: currentFeaturedProductList,
+        featuredProductList: getFeaturedProductListTestData(),
     }
 }
