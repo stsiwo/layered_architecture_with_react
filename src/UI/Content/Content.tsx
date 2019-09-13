@@ -20,7 +20,6 @@ const Content: React.FunctionComponent<{}> = (props: {}) => {
         display: "flex",
         backgroundColor: "#fff878",
         //height: "100%", 
-        height: "1000px",
         width: "100%",
         
     });

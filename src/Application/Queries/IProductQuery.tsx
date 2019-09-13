@@ -1,6 +1,6 @@
 export interface IProductQuery {
   
-  getProductById(id: string): object; 
+    getProductById(id: string): object; 
 
 
 };
