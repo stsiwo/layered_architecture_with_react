@@ -157,12 +157,12 @@
 .featured-product-item-detail-review-icon::before {
     position: absolute;
     top: -6px;
-    left: 2px;
+    left: 1px;
     content: "";
-    border-bottom: 8px solid gold;
+    border-bottom: 9px solid gold;
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
-    transform: rotate(40deg);
+    transform: rotate(35deg);
 }
 
 .featured-product-item-detail-review-icon::after {

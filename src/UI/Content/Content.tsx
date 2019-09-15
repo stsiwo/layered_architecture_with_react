@@ -6,6 +6,7 @@ import CartDetail from "./Cart/CartDetail";
 import Account from "./Account/Account";
 import Order from "./Order/Order";
 import Home from "./Home/Home";
+import ProductSearchResult from "./Product/ProductSearchResult/ProductSearchResult";
 
 const Content: React.FunctionComponent<{}> = (props: {}) => {
 
@@ -19,7 +20,6 @@ const Content: React.FunctionComponent<{}> = (props: {}) => {
         marginTop: cssGlobal.headerHeight,
         display: "flex",
         backgroundColor: "#fff878",
-        //height: "100%", 
         width: "100%",
         
     });
@@ -30,6 +30,7 @@ const Content: React.FunctionComponent<{}> = (props: {}) => {
             <Route path="/cart" exact component={CartDetail} />
             <Route path="/account" exact component={Account} />
             <Route path="/order" exact component={Order} />
+            <Route path="/product-search-result" exact component={ProductSearchResult} />
         </div>
     );
 } 
