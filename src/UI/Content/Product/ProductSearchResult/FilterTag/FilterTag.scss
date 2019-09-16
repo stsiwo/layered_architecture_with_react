@@ -1,0 +1,61 @@
+@import '../../../../Base/Css/GlobalVariables';
+
+.product-search-result-list-filter-tag-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.product-search-result-list-filter-tag-cover {
+    background-color: mediumspringgreen;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    margin: 3px 0 3px 20px;
+    padding: 5px;
+    border-radius: 0 5px 5px 0;
+}
+
+.product-search-result-list-filter-tag-cover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -15px;
+    border-right: 15px solid mediumspringgreen; 
+    border-top: 12.5px solid transparent;
+    border-bottom: 12.5px solid transparent;
+
+}
+
+.product-search-result-list-filter-tag-cover::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -3.5px;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 2.5px;
+    transform: translate(0, -50%);
+    box-shadow: 1px 1px 1px grey;
+}
+
+.product-search-result-list-filter-tag-name {
+    margin-right: 5px;
+    margin-left: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+}
+
+.product-search-result-list-filter-tag-remove-btn {
+    all: unset;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 7.5px;
+    text-align: center;
+}

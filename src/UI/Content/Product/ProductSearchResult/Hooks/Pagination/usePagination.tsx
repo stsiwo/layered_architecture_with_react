@@ -4,6 +4,7 @@ import { GetProductSearchResultListOutputType } from "../../../../../../Applicat
 import { useProductSearchResultApiFetch } from "../ApiFetch/useProductSearchResultApiFetch";
 import range = require('lodash/range');
 import { getProductSearchResultListTestData } from "../../../../../../../tests/UI/Content/Product/ProductSearchResult/ProductSearchResultListTestData";
+import { toASCII } from "punycode";
 
 export const usePagination: () => usePaginationType = () => {
 
@@ -26,12 +27,27 @@ export const usePagination: () => usePaginationType = () => {
 
     //const pageNum: number[] = generatePageNumList(currentProductSearchResult.totalCount, currentPagination.limit);
     const pageNum: number[] = generatePageNumList(sampleData.totalCount, currentPagination.limit, currentPagination.offset);
+    const pageList: PageType[] = pageNum.map((page) => {
+        const currentPageNum = calculateCurrentPageNum(currentPagination.offset, currentPagination.limit);
+        return {
+            page: page,
+            ...(currentPageNum === page && { css: "product-search-result-list-pagination-btn product-search-result-list-pagination-btn-selected"}),
+            ...(currentPageNum !== page && { css: "product-search-result-list-pagination-btn"}),
+        } as PageType;
+    })
+    const maxPageNum: number = calculateMaxPageNum(sampleData.totalCount, currentPagination.limit);
 
     return {
         currentProductSearchResult: sampleData,
         toggleFilterComponentEventHandler: toggleFilterComponentEventHandler,
-        pageNum: pageNum, 
+        pageList: pageList, 
+        maxPageNum: maxPageNum,
     } 
+}
+
+export declare type PageType = {
+    page: number,
+    css: string,
 }
 
 const calculateNextOffset: (nextPageNum: number, limit: number) => number = (nextPageNum, limit) => {
@@ -44,7 +60,7 @@ export const generatePageNumList: (totalCount: number, limit: number, offset: nu
     const leftBtnNum = 2;
     const rightBtnNum = 2;
     const currentPageNum = (offset !== 0) ? offset / limit : 1;
-    const maxPageNum = Math.ceil(totalCount / limit);
+    const maxPageNum = calculateMaxPageNum(totalCount, limit); 
 
     if (totalCount <= limit) return []; 
 
@@ -62,3 +78,12 @@ export const generatePageNumList: (totalCount: number, limit: number, offset: nu
         return range(lowerPageNum, upperPageNum + 1);
     }
 }
+
+const calculateMaxPageNum: (totalCount: number, limit: number) => number = (totalCount, limit) => {
+    return Math.ceil(totalCount / limit);
+}
+
+const calculateCurrentPageNum: (offset: number, limit: number) => number = (offset, limit) => {
+    return (offset !== 0) ? offset / limit : 1;
+}
+

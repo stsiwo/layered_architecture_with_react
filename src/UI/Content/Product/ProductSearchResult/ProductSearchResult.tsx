@@ -5,6 +5,8 @@ import { useProductSearchResultType } from "./useProductSearchResultType";
 import { useProductSearchResult } from "./useProductSearchResult";
 import { ProductSearchResultListType } from "../../../../Application/ProductServices/GetProductSearchResultList/GetProductSearchResultListOutputType";
 import { displayAsMoney } from "../../../Base/Utils/Utils";
+import FilterTag from "./FilterTag/FilterTag";
+import Sort from "./Sort/Sort";
 
 const ProductSearchResult: React.FunctionComponent<{}> = (props: {}) => {
 
@@ -71,11 +73,23 @@ const ProductSearchResult: React.FunctionComponent<{}> = (props: {}) => {
     };
 
     const renderPagenation: () => React.ReactNode = () => {
-        return productSearchResultListHook.paginationHook.pageNum.map((pageNum) => {
+        const pageList = productSearchResultListHook.paginationHook.pageList;
+        const maxPageNum = productSearchResultListHook.paginationHook.maxPageNum; 
+        if (pageList.length !== 0) {
             return (
-                <button className="product-search-result-filter-list-pagination-btn" value={pageNum} key={pageNum}>{pageNum}</button>
+                <React.Fragment>
+                    <button className="product-search-result-list-pagination-btn" value="1">&laquo;</button>
+                    {(pageList.map((page) => {
+                        return (
+                            <button className={page.css} value={page.page} key={page.page}>{page.page}</button>
+                        );
+                    }))}
+                    <button className="product-search-result-list-pagination-btn" value={maxPageNum}>&raquo;</button>
+                </React.Fragment>
             );
-        });
+        } else {
+            return null;
+        }
     };
 
     return (
@@ -83,18 +97,16 @@ const ProductSearchResult: React.FunctionComponent<{}> = (props: {}) => {
             <div className="product-search-result-cover">
                 <div className={`product-search-result-filter-list-wapper ${productSearchResultListHook.toggleFilterHook.currentToggleFilterCss}`}>
                     <h2 className="product-search-result-filter-list-wapper-title">Filters</h2>
-                    <div className="product-search-result-filter-list-tags-wrapper">
-                    
-                    </div>
-                    <div className="product-search-result-filter-list-sort-wrapper">
-                    
-                    </div>
                     <div className="product-search-result-filter-list-coover">
                         {renderFilterList()}
                     </div>
                 </div>
                 <section className="product-search-result-list-wrapper"> 
-                    <h2 className="product-search-result-list-wapper-title">Search Result</h2>
+                    <h2 className="product-search-result-list-title">Search Result</h2>
+                    <div className="product-search-result-list-filter-tag-sort-wrapper">
+                        <FilterTag />
+                        <Sort /> 
+                    </div>
                     <div className="product-search-result-list-cover">
                         {renderProductSearchResult()}
                     </div>
@@ -104,8 +116,8 @@ const ProductSearchResult: React.FunctionComponent<{}> = (props: {}) => {
                             onClick={productSearchResultListHook.toggleFilterHook.toggleFilterComponentEventHandler}>
                         </button>
                     )}
-                    <div className="product-search-result-filter-list-shadow"></div>
-                    <div className="product-search-result-filter-list-pagenation">
+                    <div className="product-search-result-list-shadow"></div>
+                    <div className="product-search-result-list-pagenation">
                         {renderPagenation()}
                     </div>
                 </section>

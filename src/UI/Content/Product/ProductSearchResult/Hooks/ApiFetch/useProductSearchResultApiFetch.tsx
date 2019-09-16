@@ -24,7 +24,7 @@ export const useProductSearchResultApiFetch: (currentPagination: PaginationState
         };
 
         // #DOUBT   
-    }, [currentPagination.offset]); // only use this effect when did mount
+    }, [currentPagination.offset, ]); // only use this effect when did mount
 
     return currentProductSearchResult;
 }
